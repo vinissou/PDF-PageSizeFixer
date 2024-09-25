@@ -9,49 +9,48 @@ args = parser.parse_args()
 src = fitz.Document(args.file)
 doc = fitz.Document()
 
-print('\n ARQUIVO:\n',args.file)
+print('\n FILE:',args.file)
 
-for ipage in src:
-    imglist  = src.get_page_images(ipage)[0]
-    rotation = ipage.rotation
-    ipage.set_rotation(0)
+for page in src:
+    imglist  = src.get_page_images(page.number)[0]
+    rotation = page.rotation
+    page.set_rotation(0)
 
-
+    #TODO: add all formats and remove from here
     A4Maior  = 842.0
     A4Menor  = 595.0
     pageH    = imglist[2] 
     pageW    = imglist[3]
-    mediaH   = ipage.mediabox[2]
-    mediaW   = ipage.mediabox[3]
-    mediaMIN = min(ipage.mediabox[2], ipage.mediabox[3])
-    mediaMAX = max(ipage.mediabox[2], ipage.mediabox[3])
+    mediaH   = page.mediabox[2]
+    mediaW   = page.mediabox[3]
+    mediaMIN = min(page.mediabox[2], page.mediabox[3])
+    mediaMAX = max(page.mediabox[2], page.mediabox[3])
     
     
-    print('\nPÁGINA:', ipage.number+1, '\t Rotação:', rotation)
-    
-    # verifica se é paisagem, retrato ou quadrado ignorando a rotação
-    # pois foi a única forma encontrada de manter a rotação original
+    # Checks if it is landscape, portrait ignoring the rotation value
+    # as it was the only way found to maintain the original rotation
+    print('\nPage:', page.number+1, '\tRotation:', rotation, end="\t")
     if  pageH < pageW and mediaW == mediaMAX: 
-        page = doc.new_page(width=A4Menor, height=A4Maior)
-        print('Retrato')
+        new_page= doc.new_page(width=A4Menor, height=A4Maior)
+        print('>> Portrait')
     elif pageH > pageW and mediaH == mediaMAX:
-        page = doc.new_page(width=A4Maior, height=A4Menor)
-        print('Paisagem')
+        new_page= doc.new_page(width=A4Maior, height=A4Menor)
+        print('>> Landscape')
     elif pageH == pageW:
-        page = doc.new_page(width=A4Maior, height=A4Menor)
-        print('Quadrado convertido para paisagem')
+        new_page= doc.new_page(width=A4Maior, height=A4Menor)
+        print('>> Perfect square > converting to landscape')
     else:  
-        page = doc.new_page(width=mediaW, height=mediaH)
-        print('Padrão não reconhecido > mantendo dimensões originais')
+        new_page= doc.new_page(width=mediaW, height=mediaH)
+        print('>> PAGE SIZE NOT RECOGNIZED > keeping the original')
     
 
-    page.show_pdf_page(page.rect, src, ipage.number)
+    new_page.show_pdf_page(page.rect, src, page.number)
 
-    #restaura rotação original, 
-    #é necessários estar depois do page.show_pdf_page
+    #restore original rotation value of the page
+    #it needs to be after page.show_pdf_page
     if  rotation != 0:
         page.set_rotation(rotation)
 
 src.close()
-doc.save('./TMP/'+args.file)
-print('\n\tARQUIVO FINALIZADO\n')
+doc.save("output.pdf")
+print('\n\tPDF CONVERTED\n')
