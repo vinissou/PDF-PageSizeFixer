@@ -1,6 +1,6 @@
 import argparse
 import fitz
-import page_sizes
+from modules import page_sizes
 
 parser = argparse.ArgumentParser()                                               
 parser.add_argument("--file", "-f", type=str, required=True)
