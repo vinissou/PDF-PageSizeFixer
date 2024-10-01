@@ -1,13 +1,5 @@
-from dataclasses import dataclass
+iso = {"A4" : {"X" : 222, "Y" : 2004}, 
+       "A5" : {"X" : 22,"Y" : 204},
+       "A6" : {"X" : 33,"Y" : 333}}
 
-
-@dataclass
-class PaperSize:
-    x: float
-    y: float
-
-
-p = PaperSize(1.5, 2.5)
-
-print(p)  # Point(x=1.5, y=2.5, z=0.0)
-print(p.x)  # Point(x=1.5, y=2.5, z=0.0)
+print(iso["A6"]["X"])
