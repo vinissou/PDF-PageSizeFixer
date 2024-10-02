@@ -1,19 +1,21 @@
 import argparse
 import fitz
+from modules.messages import help_text
 from modules import page_sizes
 
+
 parser = argparse.ArgumentParser(
-    prog="PDFPageSizeFixer",
+    prog="PDF-PageSizeFixer",
     description="Adjusts a PDF's print paper size",
-    epilog="run with the --help flag for more info",
+    epilog=help_text,
 )
-parser.add_argument("--file", "-f", type=str, required=True)
+parser.add_argument("--file", "-f", type=str, required=True, help="input file")
 args = parser.parse_args()
 
-
 src = fitz.Document(args.file)
-print(args.filename)
 doc = fitz.Document()
+
+print(args)
 
 print("\n FILE:", args.file)
 
@@ -56,5 +58,5 @@ for page in src:
         page.set_rotation(rotation)
 
 src.close()
-doc.save("output.pdf")
+doc.save("OUTPUT.pdf")  # add size to the file's name
 print("\n\tPDF CONVERTED\n")
