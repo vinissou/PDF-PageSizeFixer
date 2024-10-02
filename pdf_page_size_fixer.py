@@ -52,10 +52,10 @@ for page in src:
 
     new_page.show_pdf_page(page.rect, src, page.number)
 
+    if rotation != 0:
+        new_page.set_rotation(rotation)
     # restore original rotation value of the page
     # it needs to be after page.show_pdf_page
-    if rotation != 0:
-        page.set_rotation(rotation)
 
 src.close()
 doc.save("OUTPUT.pdf")  # add size to the file's name

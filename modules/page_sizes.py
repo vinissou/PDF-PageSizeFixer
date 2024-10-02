@@ -42,5 +42,5 @@ ISO_C = {
 }
 
 
-print(ISO_A["A0"])
-print(ISO_B["B6"]["x"])
+#print(ISO_A["A0"])
+#print(ISO_B["B6"]["x"])
