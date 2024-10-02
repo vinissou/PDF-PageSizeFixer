@@ -14,8 +14,7 @@ args = parser.parse_args()
 
 src = fitz.Document(args.file)
 doc = fitz.Document()
-
-print(args)
+out = args.file
 
 print("\n FILE:", args.file)
 
@@ -58,5 +57,8 @@ for page in src:
         new_page.set_rotation(rotation)
 
 src.close()
-doc.save("OUTPUT.pdf")  # add size to the file's name
+if out.endswith('.pdf') or out.endswith('.PDF'):
+    out = out[:-4]
+
+doc.save(out+"-OUTUPUT.pdf")  # add size to the file's name
 print("\n\tPDF CONVERTED\n")
