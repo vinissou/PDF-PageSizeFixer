@@ -18,8 +18,8 @@ for page in src:
     page.set_rotation(0)
 
     # TODO: add all formats and remove from here
-    page_y = iso["A4"]["y"]
-    page_x = iso["A4"]["x"]
+    page_y = page_sizes.iso["A4"]["y"]
+    page_x = page_sizes.iso["A4"]["x"]
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
