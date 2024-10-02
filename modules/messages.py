@@ -1,4 +1,4 @@
-help_text = " Use the --options flag to show all available options"
+help_text = "Developed at: https://github.com/vinissou/PDF-PageSizeFixer"
 
 
 def options():
