@@ -10,4 +10,4 @@ https://github.com/pymupdf/PyMuPDF/discussions/3348
 And they do not support PDF/A either:
 https://github.com/pymupdf/PyMuPDF/discussions/2169
 
-I used to run MuPDF with the "mutool clean" command after running this command to ensure the PDF/A would not get lost. Mutool can't convert PDFs to PDF/A, but the clean version usually helps to keep a file already formatted as PDF/A safe.
+I used to run MuPDF with the "mutool clean" command after running this command to ensure the PDF/A conformity would not get lost. Mutool can't convert PDFs to PDF/A, but the clean version usually helps to keep a file already formatted as PDF/A safe.
