@@ -1,3 +1,5 @@
+[![ruff](https://github.com/vinissou/PdfPageSizeFixer/actions/workflows/ruff.yml/badge.svg)](https://github.com/vinissou/PdfPageSizeFixer/actions/workflows/ruff.yml)
+
 # PdfPageSizeFixer
 
 
