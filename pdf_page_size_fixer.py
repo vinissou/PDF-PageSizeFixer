@@ -18,8 +18,8 @@ for page in src:
     page.set_rotation(0)
 
     # TODO: add all formats and remove from here
-    A4Maior = 842.0
-    A4Menor = 595.0
+    page_y = iso["A4"]["y"]
+    page_x = iso["A4"]["x"]
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
@@ -31,13 +31,13 @@ for page in src:
     # as it was the only way found to maintain the original rotation
     print("\nPage:", page.number + 1, "\tRotation:", rotation, end="\t")
     if pageH < pageW and mediaW == mediaMAX:
-        new_page = doc.new_page(width=A4Menor, height=A4Maior)
+        new_page = doc.new_page(width=page_x, height=page_y)
         print(">> Portrait")
     elif pageH > pageW and mediaH == mediaMAX:
-        new_page = doc.new_page(width=A4Maior, height=A4Menor)
+        new_page = doc.new_page(width=page_y, height=page_x)
         print(">> Landscape")
     elif pageH == pageW:
-        new_page = doc.new_page(width=A4Maior, height=A4Menor)
+        new_page = doc.new_page(width=page_y, height=page_x)
         print(">> Perfect square > converting to landscape")
     else:
         new_page = doc.new_page(width=mediaW, height=mediaH)
