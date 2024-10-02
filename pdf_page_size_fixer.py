@@ -2,7 +2,11 @@ import argparse
 import fitz
 from modules import page_sizes
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(
+    prog="PDFPageSizeFixer",
+    description="Adjusts a PDF's print paper size",
+    epilog="run with the --help flag for more info",
+)
 parser.add_argument("--file", "-f", type=str, required=True)
 args = parser.parse_args()
 
