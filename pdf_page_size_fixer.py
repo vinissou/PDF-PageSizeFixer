@@ -1,16 +1,20 @@
 import argparse
 import fitz
-from modules.messages import help_text
+from modules import messages
 from modules import page_sizes
 
 
 parser = argparse.ArgumentParser(
     prog="PDF-PageSizeFixer",
     description="Adjusts a PDF's print paper size",
-    epilog=help_text,
+    epilog=messages.help_text,
 )
-parser.add_argument("--file", "-f", type=str, required=True, help="input file")
+parser.add_argument("--options", action='store_true', help="prints all options")
+parser.add_argument("--file", "-f", type=str, help="input file")
 args = parser.parse_args()
+
+if args.options:
+    messages.options()
 
 src = fitz.Document(args.file)
 doc = fitz.Document()
@@ -23,9 +27,8 @@ for page in src:
     rotation = page.rotation
     page.set_rotation(0)
 
-    # TODO: add all formats and remove from here
-    page_y = page_sizes.ISO_A["A4"]["y"]
-    page_x = page_sizes.ISO_A["A4"]["x"]
+    page_y = page_sizes.ISO_A["A4"]["y"]  # this wil be a dedicated
+    page_x = page_sizes.ISO_A["A4"]["x"]  # function
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
@@ -57,8 +60,8 @@ for page in src:
         new_page.set_rotation(rotation)
 
 src.close()
-if out.endswith('.pdf') or out.endswith('.PDF'):
+if out.endswith(".pdf") or out.endswith(".PDF"):
     out = out[:-4]
 
-doc.save(out+"-OUTUPUT.pdf")  # add size to the file's name
+doc.save(out + "-OUTPUT.pdf")  # add size to the file's name
 print("\n\tPDF CONVERTED\n")
