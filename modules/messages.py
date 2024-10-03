@@ -25,11 +25,11 @@ def options():
 
         ANSI       UK PAPER     UK PRESS    Newspaper 
 
-        Letter         
-        Legal
-        Ledger 
-        Tabloid 
-        Executive
+        LETTER         
+        LEGAL
+        LEDGER 
+        TABLOID 
+        EXECUTIVE
         ANSI_C
         ANSI_D
         ANSI_E

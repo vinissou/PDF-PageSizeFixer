@@ -9,14 +9,9 @@ parser = argparse.ArgumentParser(
     description="Adjusts a PDF's print paper size",
     epilog=messages.help_text,
 )
+parser.add_argument("--file", "-f", type=str, help="input file")
 parser.add_argument(
-    "--file", "-f", 
-    type=str, 
-    help="input file")
-parser.add_argument(
-    "--options", 
-    action="store_true", 
-    help="prints all available options"
+    "--options", action="store_true", help="prints all available options"
 )
 args = parser.parse_args()
 
