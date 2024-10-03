@@ -29,8 +29,8 @@ for page in src:
     rotation = page.rotation
     page.set_rotation(0)
 
-    page_y = paper_size("A4")["y"]  # this wil be a dedicated
-    page_x = paper_size("A4")["x"]  # function
+    page_x = paper_size("A4")["x"]  # this wil be a dedicated
+    page_y = paper_size("A4")["y"]  # function
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
