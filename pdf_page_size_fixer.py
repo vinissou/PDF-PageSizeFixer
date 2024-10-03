@@ -1,7 +1,7 @@
 import argparse
 import fitz
 from modules import messages
-from modules import page_sizes
+from modules.paper_sizes import paper_size
 
 
 parser = argparse.ArgumentParser(
@@ -29,8 +29,8 @@ for page in src:
     rotation = page.rotation
     page.set_rotation(0)
 
-    page_y = page_sizes.ISO["A4"]["y"]  # this wil be a dedicated
-    page_x = page_sizes.ISO["A4"]["x"]  # function
+    page_y = paper_size("A4")["y"]  # this wil be a dedicated
+    page_x = paper_size("A4")["x"]  # function
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
