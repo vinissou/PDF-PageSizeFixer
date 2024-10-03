@@ -4,39 +4,49 @@ from modules import messages
 from modules.paper_sizes import paper_size
 
 
-parser = argparse.ArgumentParser(
-    prog="PDF-PageSizeFixer",
-    description="Adjusts a PDF's print paper size",
-    epilog=messages.help_text,
-)
-parser.add_argument("--file", "-f", type=str, help="input file")
-parser.add_argument("--size", "-s", type=str, help="choose the paper, default is A4")
-parser.add_argument(
-    "--options", action="store_true", help="prints all available options"
-)
-args = parser.parse_args()
+def parsing_args():
+    parser = argparse.ArgumentParser(
+        prog="PDF-PageSizeFixer",
+        description="Adjusts a PDF's print paper size",
+        epilog=messages.help_text,
+    )
+    parser.add_argument(
+        "--options", action="store_true", help="prints all available options"
+    )
+    parser.add_argument("--file", "-f", type=str, help="input file")
+    parser.add_argument(
+        "--size", "-s", type=str, help="select the paper, default is A4"
+    )
+    return parser.parse_args()
+
+
+# main goes here
+args = parsing_args()
 
 if args.options:
     messages.options()
+
+
+src = fitz.Document(args.file)
+doc = fitz.Document()
+out = src.name
+
+print("\n FILE:", out)
+print("\n FILE:", src.pages)
 
 if args.size:
     page_size = args.size
 else:
     page_size = "A4"
 
-src = fitz.Document(args.file)
-doc = fitz.Document()
-out = args.file
-
-print("\n FILE:", args.file)
+page_x = paper_size(page_size)["x"]  # this wil be a dedicated
+page_y = paper_size(page_size)["y"]  # function
 
 for page in src:
     imglist = src.get_page_images(page.number)[0]
     rotation = page.rotation
     page.set_rotation(0)
 
-    page_x = paper_size(page_size)["x"]  # this wil be a dedicated
-    page_y = paper_size(page_size)["y"]  # function
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
@@ -68,8 +78,9 @@ for page in src:
         new_page.set_rotation(rotation)
 
 src.close()
+
 if out.endswith(".pdf") or out.endswith(".PDF"):
     out = out[:-4]
 
-doc.save(out + "-OUTPUT.pdf")  # add size to the file's name
+doc.save(out + "-FORMATED-" + page_size + ".pdf")
 print("\n\tPDF CONVERTED\n")
