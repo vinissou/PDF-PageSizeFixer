@@ -44,3 +44,12 @@ ISO_C = {
 
 # print(ISO_A["A0"])
 # print(ISO_B["B6"]["x"])
+# change to this VVV
+#from dataclasses import dataclass
+#
+#@dataclass()
+#class Standard():
+#    name: str
+#    x: int
+#    y: float
+#
