@@ -23,9 +23,9 @@ def options():
 
 
 
-        ANSI       UK PAPER     UK PRESS    Newspaper 
+        ANSI      
 
-        LETTER         
+        LETTER           [MORE FORMATS COMING SOON]
         LEGAL
         LEDGER 
         TABLOID 

@@ -1,4 +1,7 @@
 # list based on https://www.prepressure.com/library/paper-size
+# I was not able to confirm the others sizes liste in the above link
+# As this was the only one listing the formats in points, more
+# research will be needed
 
 ISO_A = {
     "A0": {"x": 2384, "y": 3370},
@@ -39,18 +42,6 @@ ISO_D = {
 }
 
 ANSI = {
-    "LETTER": {"x": 3090, "y": 2186},
-    "LEGAL": {"x": 2222, "y": 3333},
-    "LEDGER ": {"x": 2222, "y": 3333},
-    "TABLOID": {"x": 2222, "y": 3333},
-    "EXECUTIVE": {"x": 2222, "y": 3333},
-    "ANSI_C": {"x": 2222, "y": 3333},
-    "ANSI_D": {"x": 2222, "y": 3333},
-    "ANSI_E": {"x": 2222, "y": 3333},
-}
-
-#
-UK_PAPER = {
     "LETTER": {"x": 612, "y": 792},
     "LEGAL": {"x": 612, "y": 1008},
     "LEDGER ": {"x": 792, "y": 1224},
@@ -61,5 +52,20 @@ UK_PAPER = {
     "ANSI_E": {"x": 3168, "y": 2448},
 }
 
-#UK_PRESS
-#NEWSPAPER
+# TODO confirm the following sizes:
+# UK_PAPER = {
+#    "FOOLSCAP": {"x": 954, "y": 1188},
+#    "SMALL_POST": {"x": 1044, "y": 1332},
+#    "SHEET1-3_CAP": {"x": 954, "y": 1584},
+#    "SHEET1-2_CAP": {"x": 954, "y": 1782},
+#    "DEMY": {"x": 1116, "y": 1440},
+#    "LARGE_POST": {"x": 1188, "y": 1512},
+#    "SMALL_MEDIUM": {"x": 1260, "y": 1584},
+#    "MEDIUM": {"x": 1296, "y": 1656},
+#    "SMALL_ROYAL": {"x": 1368, "y": 1728},
+#    "ROYAL": {"x": 1440, "y": 1800},
+#    "IMPERIAL": {"x": 1584, "y": 2160},
+# }
+# UK_PRINTING
+# US_PRINTING
+# NEWSPAPER
