@@ -31,7 +31,6 @@ def main():
     out = src.name
 
     print("\n FILE:", out)
-    print("\n FILE:", src.pages)
 
     if args.size:
         page_size = args.size
@@ -50,7 +49,7 @@ def main():
         pageW = imglist[3]
         mediaH = page.mediabox[2]
         mediaW = page.mediabox[3]
-        #mediaMIN = min(page.mediabox[2], page.mediabox[3])
+        # mediaMIN = min(page.mediabox[2], page.mediabox[3])
         mediaMAX = max(page.mediabox[2], page.mediabox[3])
 
         # Checks if it is landscape, portrait ignoring the rotation value
