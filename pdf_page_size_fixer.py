@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser(
     epilog=messages.help_text,
 )
 parser.add_argument("--file", "-f", type=str, help="input file")
+parser.add_argument("--size", "-s", type=str, help="choose the paper, default is A4")
 parser.add_argument(
     "--options", action="store_true", help="prints all available options"
 )
@@ -17,6 +18,11 @@ args = parser.parse_args()
 
 if args.options:
     messages.options()
+
+if args.size:
+    page_size = args.size
+else:
+    page_size = "A4"
 
 src = fitz.Document(args.file)
 doc = fitz.Document()
@@ -29,8 +35,8 @@ for page in src:
     rotation = page.rotation
     page.set_rotation(0)
 
-    page_x = paper_size("A4")["x"]  # this wil be a dedicated
-    page_y = paper_size("A4")["y"]  # function
+    page_x = paper_size(page_size)["x"]  # this wil be a dedicated
+    page_y = paper_size(page_size)["y"]  # function
     pageH = imglist[2]
     pageW = imglist[3]
     mediaH = page.mediabox[2]
