@@ -1,9 +1,9 @@
 # list based on https://www.prepressure.com/library/paper-size
-# I was not able to confirm the others sizes liste in the above link
+# I was not able to confirm the others sizes listed in the above link
 # As this was the only one listing the formats in points, more
 # research will be needed
 
-ISO_A = {
+ISO = {
     "A0": {"x": 2384, "y": 3370},
     "A1": {"x": 1684, "y": 2384},
     "A2": {"x": 1190, "y": 1684},
@@ -13,9 +13,6 @@ ISO_A = {
     "A6": {"x": 298, "y": 420},
     "A7": {"x": 210, "y": 298},
     "A8": {"x": 148, "y": 210},
-}
-
-ISO_B = {
     "B0": {"x": 2835, "y": 4008},
     "B1": {"x": 2004, "y": 2835},
     "B2": {"x": 1417, "y": 2004},
@@ -27,17 +24,11 @@ ISO_B = {
     "B8": {"x": 176, "y": 249},
     "B9": {"x": 125, "y": 176},
     "B10": {"x": 88, "y": 125},
-}
-
-ISO_C = {
     "C2": {"x": 1837, "y": 578},
     "C3": {"x": 578, "y": 919},
     "C4": {"x": 919, "y": 649},
     "C5": {"x": 649, "y": 459},
     "C6": {"x": 459, "y": 323},
-}
-
-ISO_D = {
     "D2": {"x": 3090, "y": 2186},
 }
 
