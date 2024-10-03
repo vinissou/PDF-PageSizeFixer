@@ -49,6 +49,17 @@ ANSI = {
     "ANSI_E": {"x": 2222, "y": 3333},
 }
 
+#
+UK_PAPER = {
+    "LETTER": {"x": 612, "y": 792},
+    "LEGAL": {"x": 612, "y": 1008},
+    "LEDGER ": {"x": 792, "y": 1224},
+    "TABLOID": {"x": 1224, "y": 792},
+    "EXECUTIVE": {"x": 522, "y": 756},
+    "ANSI_C": {"x": 1584, "y": 1224},
+    "ANSI_D": {"x": 2448, "y": 1584},
+    "ANSI_E": {"x": 3168, "y": 2448},
+}
 
-# print(ISO_A["A0"])
-# print(ISO_B["B6"]["x"])
+UK_PRESS
+NEWSPAPER
