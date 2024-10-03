@@ -26,9 +26,12 @@ def main():
     if args.options:
         messages.options()
 
-    src = fitz.Document(args.file)
-    doc = fitz.Document()
-    out = src.name
+    if args.file:
+        src = fitz.Document(args.file)
+        doc = fitz.Document()
+        out = src.name
+    else:
+        raise FileNotFoundError("\n\n \033[31m Input file not provided \033[0m \n")
 
     print("\n FILE:", out)
 
