@@ -61,5 +61,5 @@ UK_PAPER = {
     "ANSI_E": {"x": 3168, "y": 2448},
 }
 
-UK_PRESS
-NEWSPAPER
+#UK_PRESS
+#NEWSPAPER
