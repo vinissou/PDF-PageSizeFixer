@@ -1,6 +1,6 @@
 # list based on https://www.prepressure.com/library/paper-size
 # I was not able to confirm the others sizes listed in the above link,
-# and some categories like newspapers have varying sizes across the 
+# and some categories like newspapers have varying sizes across the
 # the world, so I included a custom size option.
 
 ISO = {
@@ -51,4 +51,3 @@ def paper_size(standard):
         return ANSI.get(standard)
     else:
         raise NameError("Not a standard")
-

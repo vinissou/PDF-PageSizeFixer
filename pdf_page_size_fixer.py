@@ -18,9 +18,15 @@ def parsing_args():
         "--size", "-s", type=str, help="select the paper, default is A4"
     )
     parser.add_argument(
-        "--custom", "-c", nargs=2, type=str, help="select the paper size manually in PostScript points"
+        "--custom",
+        "-c",
+        nargs=2,
+        metavar=("width", "height"),
+        type=str,
+        help="select the paper size manually in PostScript points",
     )
     return parser.parse_args()
+
 
 def main():
     args = parsing_args()
@@ -33,23 +39,24 @@ def main():
         doc = fitz.Document()
         out = src.name
     else:
-        raise FileNotFoundError("\n\n \033[31m Input file not provided \033[0m \n")
+        raise FileNotFoundError(messages.no_file)
 
     print("\n FILE:", out)
 
     if args.size:
         page_size = args.size
-    else:
-        page_size = "A4"
-    
-    if (args.custom):
-        print(args.custom[0])
-        print(args.custom[1])
+        page_x = paper_size(page_size)["x"]
+        page_y = paper_size(page_size)["y"]
+    elif args.custom:
+        page_size = "CUSTOM"
         page_x = int(args.custom[0])
         page_y = int(args.custom[1])
+        if page_x > page_y:
+            raise ValueError(messages.size_error)
     else:
-        page_x = paper_size(page_size)["x"]  
-        page_y = paper_size(page_size)["y"]  
+        page_size = "A4"
+        page_x = paper_size(page_size)["x"]
+        page_y = paper_size(page_size)["y"]
 
     for page in src:
         imglist = src.get_page_images(page.number)[0]
