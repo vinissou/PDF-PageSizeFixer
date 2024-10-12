@@ -51,10 +51,10 @@ def main():
         page_size = "CUSTOM"
         page_x = int(args.custom[0])
         page_y = int(args.custom[1])
-        if page_x > page_y: 
+        if page_x > page_y:
             page_x, page_y = page_y, page_x
-            # converts size to portrait 
-            # as it's needed to the conversion to work 
+            # converts size to portrait
+            # as it's needed to the conversion to work
     else:
         page_size = "A4"
         page_x = paper_size(page_size)["x"]
