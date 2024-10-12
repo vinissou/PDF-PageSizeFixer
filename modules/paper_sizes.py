@@ -1,7 +1,7 @@
 # list based on https://www.prepressure.com/library/paper-size
-# I was not able to confirm the others sizes listed in the above link
-# As this was the only one listing the formats in points, more
-# research will be needed
+# I was not able to confirm the others sizes listed in the above link,
+# and some categories like newspapers have varying sizes across the 
+# the world, so I included a custom size option.
 
 ISO = {
     "A0": {"x": 2384, "y": 3370},
@@ -52,22 +52,3 @@ def paper_size(standard):
     else:
         raise NameError("Not a standard")
 
-
-# print(paper_size("aaaa")["x"])
-# TODO confirm the following sizes:
-# UK_PAPER = {
-#    "FOOLSCAP": {"x": 954, "y": 1188},
-#    "SMALL_POST": {"x": 1044, "y": 1332},
-#    "SHEET1-3_CAP": {"x": 954, "y": 1584},
-#    "SHEET1-2_CAP": {"x": 954, "y": 1782},
-#    "DEMY": {"x": 1116, "y": 1440},
-#    "LARGE_POST": {"x": 1188, "y": 1512},
-#    "SMALL_MEDIUM": {"x": 1260, "y": 1584},
-#    "MEDIUM": {"x": 1296, "y": 1656},
-#    "SMALL_ROYAL": {"x": 1368, "y": 1728},
-#    "ROYAL": {"x": 1440, "y": 1800},
-#    "IMPERIAL": {"x": 1584, "y": 2160},
-# }
-# UK_PRINTING
-# US_PRINTING
-# NEWSPAPER

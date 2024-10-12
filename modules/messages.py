@@ -20,12 +20,9 @@ def options():
           A8      B8
                   B10
 
-
-
-
         ANSI      
 
-        LETTER           [MORE FORMATS COMING SOON]
+        LETTER           
         LEGAL
         LEDGER 
         TABLOID 
@@ -33,6 +30,9 @@ def options():
         ANSI_C
         ANSI_D
         ANSI_E
+
+    You can choose your custom size with the command: -c x y 
+ 
      
     """
     print(options_text)
