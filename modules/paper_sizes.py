@@ -1,7 +1,10 @@
 # list based on https://www.prepressure.com/library/paper-size
 # I was not able to confirm the others sizes listed in the above link,
-# and some categories like newspapers have varying sizes across the
-# the world, so I included a custom size option.
+# (including the ISO D0) and some categories like newspapers have varying
+# sizes across the the world, so I included a custom size option.
+# https://papersizes.io/
+#
+
 
 from modules import messages
 
@@ -31,7 +34,6 @@ ISO = {
     "C4": {"x": 919, "y": 649},
     "C5": {"x": 649, "y": 459},
     "C6": {"x": 459, "y": 323},
-    "D2": {"x": 3090, "y": 2186},
 }
 
 ANSI = {
