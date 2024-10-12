@@ -4,6 +4,8 @@ no_file = "\n\n \033[31m Input file not provided \033[0m \n"
 
 size_error = "\n\n \033[31m Page size needs to be inserted in portrait mode: width < height\033[0m \n"
 
+standard_error = "\n\n \033[31m Page size standard not recognized \033[0m \n"
+
 
 def options():
     options_text = """
@@ -35,12 +37,9 @@ def options():
         ANSI_D
         ANSI_E
 
-    You can choose your custom size with the command: -c width height
+    You can choose your own custom size with the command: -c width height
  
      
     """
     print(options_text)
     exit()
-
-
-# print(options_text)

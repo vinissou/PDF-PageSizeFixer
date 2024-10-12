@@ -3,6 +3,8 @@
 # and some categories like newspapers have varying sizes across the
 # the world, so I included a custom size option.
 
+from modules import messages
+
 ISO = {
     "A0": {"x": 2384, "y": 3370},
     "A1": {"x": 1684, "y": 2384},
@@ -50,4 +52,4 @@ def paper_size(standard):
     elif ANSI.get(standard) is not None:
         return ANSI.get(standard)
     else:
-        raise NameError("Not a standard")
+        raise NameError(messages.standard_error)
