@@ -6,7 +6,7 @@ from modules.paper_sizes import paper_size
 
 def parsing_args():
     parser = argparse.ArgumentParser(
-        prog="PDF-PageSizeFixer",
+        prog="PDF-PaperSizeFixer",
         description="Adjusts a PDF's print paper size",
         epilog=messages.help_text,
     )
