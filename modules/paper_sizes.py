@@ -1,10 +1,13 @@
-# list based on https://www.prepressure.com/library/paper-size
-# I was not able to confirm the others sizes listed in the above link,
-# (including the ISO D0) and some categories like newspapers have varying
-# sizes across the the world, so I included a custom size option.
-# https://papersizes.io/
+#  I intend to make a more complete list of builtin options in the 
+#  future, but I found some conflicting info from different sources, 
+#  so more research will be needed. 
+#  Besides, some categories, like newspapers, have varying sizes
+#  across the world, so for now I included a custom size option.
+#  The most complete list of sizes in PostScript points is here:
+#  https://papersizes.io/
 #
-
+#  OBS: PDFinfo tool from Poppler seems to detect a few wrong paper size 
+#  they are listed in the PSOutputDev.cc file
 
 from modules import messages
 
