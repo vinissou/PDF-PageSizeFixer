@@ -2,12 +2,8 @@
 
 # PDF-PaperSizeFixer
 
-
 A quick solution to change PDF files page size, because Ghostscript and every single option I ever tested always messes with the orientation, sometimes in a destructive way. 
 This just adjusts the MediaBox value of the file without re-encoding the images to avoid any quality loss. And it also keeps the OCR intact.
-
-I intend to expand it's funcionality and add executables soon.
-
 
 
 ## Future Features
