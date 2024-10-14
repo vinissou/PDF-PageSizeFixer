@@ -5,6 +5,8 @@
 A quick solution to change PDF files page size, because Ghostscript and every single option I ever tested always messes with the orientation, sometimes in a destructive way. 
 This just adjusts the MediaBox value of the file without re-encoding the images to avoid any quality loss. And it also keeps the OCR intact.
 
+It just needs PyMuPDF to run in Windows or Linux (and probably Mac), but I also provided a portable executable version in the Releases. 
+
 
 ## Future Features
 
